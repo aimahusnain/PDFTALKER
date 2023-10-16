@@ -2,6 +2,16 @@
 import { useState } from 'react'
 import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
 import { Button } from './ui/button'
+
+import Dropzone from 'react-dropzone'
+
+const UploadDropzone = () => {
+    return (
+        <Dropzone multiple={false}></Dropzone>
+    )
+}
+
+
 const UploadButton = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -16,10 +26,10 @@ const UploadButton = () => {
             </DialogTrigger>
 
             <DialogContent>
-                example content
+                <UploadDropzone />
             </DialogContent>
         </Dialog>
     )
 }
-    
+
 export default UploadButton
